@@ -1,16 +1,18 @@
 # 验证记录
 
-`python -m unittest discover -s tests -v`
+## 2026-11-01 数值有效性回归
 
-```text
-test_invalid_data (test_prototype.PrototypeTests.test_invalid_data) ... ok
-test_reference_recovery (test_prototype.PrototypeTests.test_reference_recovery) ... ok
-test_reject_invalid_process_input (test_prototype.PrototypeTests.test_reject_invalid_process_input) ... ok
+修复前已复现：阈值为 NaN 或正无穷时，包含明显异常的输入返回全空掩膜；有限但极大的输入相减可能产生非有限评分。修复后，这些输入明确抛出 ValueError，不产生误导性“无异常”结果。
 
-----------------------------------------------------------------------
-Ran 3 tests in 0.022s
+执行 `python -m unittest discover -s tests -v`，7 项测试通过：
 
-OK
-```
+- 固定种子合成样例的原有检出指标。
+- 空/非有限输入及形状不匹配拒绝。
+- 非有限、非正、非标量阈值拒绝。
+- 有限输入差分溢出及评分溢出拒绝，且不泄漏 RuntimeWarning。
+- 正负异常对称检测及严格大于阈值的判定。
+- 恒定残差产生有限的零评分，不被标为局部异常。
 
-`python src/prototype.py --output artifacts` 生成实际结果图及 metrics.json。指标来自固定种子合成样例，不代表真实场景精度。
+另执行 `python src/prototype.py --output <临时目录>`，复核绘图与导出流程。固定种子指标保持 synthetic_recall=1.0、false_positive_pixels=0；这些不是设备或真实工业数据的精度结论。
+
+新增 GitHub Actions 在 Python 3.11 / 3.13 上运行回归及合成样例导出；每次提交的实际结论以 Actions 记录为准。

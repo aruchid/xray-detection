@@ -7,12 +7,36 @@ def finite(a,ndim=None):
  a=np.asarray(a,dtype=float)
  if not np.isfinite(a).all() or not a.size or (ndim is not None and a.ndim!=ndim): raise ValueError('Invalid shape, empty or nonfinite input')
  return a
-def process(image,reference,threshold=5.):
- image=finite(image,2);reference=finite(reference,2)
- if image.shape!=reference.shape or threshold<=0:raise ValueError('Shape mismatch or invalid threshold')
- residual=image-reference;center=np.median(residual);sigma=max(float(1.4826*np.median(np.abs(residual-center))),1e-8)
- score=np.abs(residual-center)/sigma
- return score>threshold,score
+def process(image, reference, threshold=5.):
+ """Return a mask and finite MAD-normalized residual scores.
+
+ Reject nonfinite/nonpositive thresholds and numerical overflow rather than
+ silently returning an empty mask for invalid computations.
+ """
+ image = finite(image, 2)
+ reference = finite(reference, 2)
+ if image.shape != reference.shape:
+  raise ValueError('Image and reference shapes must match')
+ try:
+  if np.ndim(threshold) != 0:
+   raise ValueError('Threshold must be a finite positive scalar')
+  threshold = float(threshold)
+ except (TypeError, ValueError, OverflowError) as error:
+  raise ValueError('Threshold must be a finite positive scalar') from error
+ if not np.isfinite(threshold) or threshold <= 0:
+  raise ValueError('Threshold must be a finite positive scalar')
+ try:
+  with np.errstate(over='raise', invalid='raise', divide='raise'):
+   residual = image - reference
+   center = np.median(residual)
+   deviation = np.abs(residual - center)
+   sigma = max(float(1.4826 * np.median(deviation)), 1e-8)
+   score = deviation / sigma
+ except FloatingPointError as error:
+  raise ValueError('Residual scoring exceeded the floating-point range; rescale inputs') from error
+ if not np.isfinite(score).all():
+  raise ValueError('Residual scores must be finite; rescale inputs')
+ return score > threshold, score
 
 def demo():
  rng=np.random.default_rng(42);y,x=np.mgrid[:100,:140];reference=.3+.4*np.exp(-((x-70)**2+(y-50)**2)/1800);truth=((x-80)**2+(y-55)**2)<64;image=reference+rng.normal(0,.01,reference.shape)+truth*.2
