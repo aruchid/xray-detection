@@ -1,0 +1,1204 @@
+{
+  "dataset": "Author PyXVis casting JPEG patches",
+  "source_commit": "30de3af0edee237ac3fb7838a14d9f156a7e2fa5",
+  "train_count": 40,
+  "test_count": 40,
+  "shape": [
+    32,
+    32
+  ],
+  "selection": "lexicographic first 20 per source split and class; exploratory subset",
+  "threshold": 5.0,
+  "score_clip": 20,
+  "accuracy": 0.375,
+  "confusion_matrix_true_rows_pred_columns": [
+    [
+      6,
+      14
+    ],
+    [
+      11,
+      9
+    ]
+  ],
+  "gradient_knn": {
+    "neighbors": 3,
+    "accuracy": 0.625,
+    "confusion_matrix_true_rows_pred_columns": [
+      [
+        7,
+        13
+      ],
+      [
+        2,
+        18
+      ]
+    ]
+  },
+  "class_semantics": "source class_0/class_1; normal/defect mapping not independently verified",
+  "limitation": "Unregistered patches, no paired normal reference or pixel truth; exploratory class-ID classification only. Not defect-localization or field acceptance.",
+  "samples": [
+    {
+      "path": "listings/images/castings/train/class_0/C10_0001.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0001.jpg",
+      "sha256": "537b9995baad10e5187801ef4330d1c420d45b4755c930c0c4cf8296f2bc0430",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0002.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0002.jpg",
+      "sha256": "85cfff6f72878a0fd8fdb1d8c45242954c170e494de6bcafd8cf0a973948e171",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0003.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0003.jpg",
+      "sha256": "22831d4b5daaaec47cd60e58ab5baca294cbe959ab33911f9f11165bf8d5bc9d",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0004.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0004.jpg",
+      "sha256": "41a8f78eea62ed3daba1ccea65a7a164bad8c676b5a08b8a99f11c2296508247",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0005.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0005.jpg",
+      "sha256": "fd96666bd71c230675e177d97288a08180166f7523b2bcde6866fa166827fa65",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0006.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0006.jpg",
+      "sha256": "3c556381352b591e0629daf03b25bac839adb2fba96a5143933b6f19d67314ba",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0007.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0007.jpg",
+      "sha256": "2368cdfd3a2b0ca5e5ef5be402ed1a5dd0f173caa57bb303f2c35973bad8b335",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0008.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0008.jpg",
+      "sha256": "d0d93a5d47cba1e806adb2c4a1081eb7fcdcc42c82d33339194e483000077bb7",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0009.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0009.jpg",
+      "sha256": "18e27c0d62501de3a6307564b3e4447f0cdaaf6a23e4474b8721b8600108c9a6",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0010.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0010.jpg",
+      "sha256": "f95b44078b4b5adc7661a1c8eee23ef6d2f9f0794b84d655f1666238e7391aca",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0011.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0011.jpg",
+      "sha256": "dc619c381e8061d22010fd267425640a04ab4e63ce6695fa5b68183b8c0da2ed",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0012.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0012.jpg",
+      "sha256": "dedf70d9fc1e6981667d977bb443a7936cb96f86cf349987ffa6b7480fdbb39a",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0013.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0013.jpg",
+      "sha256": "ceb19a3c62a6765f6a321d6d9776016ff759d7296c2e520989ac257857634235",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0014.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0014.jpg",
+      "sha256": "ed84c685a2ecef9f739882d0ddb3d13c1e17de9c787a41419fce84c9753395ff",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0015.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0015.jpg",
+      "sha256": "058b5b83173762f97dc696db6f3c5de7f8bc72e74b067893e468d04b4f3dc3a4",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0016.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0016.jpg",
+      "sha256": "4c592680eeffb701fe4b46b9ee7defe0b2f0365172850619104b7b4d6cd075ac",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0017.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0017.jpg",
+      "sha256": "640771eadc55d30b919bca7ab6099e4aca4ea32377d2427239b8d6cfea82cd5f",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0018.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0018.jpg",
+      "sha256": "d0d93a5d47cba1e806adb2c4a1081eb7fcdcc42c82d33339194e483000077bb7",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0019.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0019.jpg",
+      "sha256": "e20a9d091e83902d60dec0dc48770e318d47c8c99fe79c0635fd44d4931786a8",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_0/C10_0020.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_0/C10_0020.jpg",
+      "sha256": "d0d93a5d47cba1e806adb2c4a1081eb7fcdcc42c82d33339194e483000077bb7",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0001.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0001.jpg",
+      "sha256": "7c4685ad00ecc83a1b2d700468c36a3884c39664da570697f8ef63687c474d31",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0002.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0002.jpg",
+      "sha256": "8f7082d7249ae6f237f7978582b0c665492e37e361ad6340ce482d8aae488d22",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0003.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0003.jpg",
+      "sha256": "ab5574c6d0d714d2d54aaeb9cc78b5c224a6d9b952995b4287e3de1704f5e733",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0004.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0004.jpg",
+      "sha256": "f4bb2784744e49586f9b69b155783b0ddb8a77f13a0a0d4129f03e9365b8b336",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0005.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0005.jpg",
+      "sha256": "0c0db798da9c430374216e4047d9a3853ac253d36d47ffbb8249257fafb350f0",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0006.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0006.jpg",
+      "sha256": "39c1c2f12efa84cc6f833d46db31deb18b7b5ac04d9fe49fcbcdfdf81f7a4f09",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0007.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0007.jpg",
+      "sha256": "799197e04ac2a5ef3183cc5ac6d3d7ee126fc4610a2620fde6aef0d8872522c9",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0008.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0008.jpg",
+      "sha256": "126c65a89084e9e041ed8e31cd80e8d098c02c3cc411a9120a9376fdbab20fe3",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0009.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0009.jpg",
+      "sha256": "6123e1ff7cef0e5e9e210cbd3a054752cbf6b7d705d7e67e0477621a67398e78",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0010.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0010.jpg",
+      "sha256": "8814de5b788403debcb4e92165808ddea20a8d794e11d1d6f1c6319e5ee24031",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0011.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0011.jpg",
+      "sha256": "b92bd016261dfb293378981d30fc7eba8e48c6a3e650750913e2a3dd793f25b4",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0012.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0012.jpg",
+      "sha256": "a5299f4868631990b5b8de62d2f19f0ab96339841f47ab0ce269bbe31214b707",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0013.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0013.jpg",
+      "sha256": "6f6281b59e92f2631960b11bfd9de913e44a6865e7bfe43f1f6619db3dd78bc5",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0014.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0014.jpg",
+      "sha256": "45fc75850300013f22dbe6086bfa7bbe7eecdb9dd87a7209039299e63908a043",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0015.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0015.jpg",
+      "sha256": "3dacb3ca452060ea97e80f2ff4bafdbf63315e9d52d69f5d30b99a60a3251143",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0016.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0016.jpg",
+      "sha256": "cbf47ccda2f11db0a9694df7114a85c698f64879ff37678ed4be8564acb18ea4",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0017.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0017.jpg",
+      "sha256": "86580233a748599e7da90e873710c2b94650d4c5945ccb0d27157a65c4d37135",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0018.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0018.jpg",
+      "sha256": "0541f20b5c95cbc6f9b670da31b4a5b448eb585ef1cdb41d4c730aa956b068cd",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0019.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0019.jpg",
+      "sha256": "5c578e6148b3f6b7f6a409f5eff522ab7e912f272c41fc42814f499bd342176e",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/train/class_1/C11_0020.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/train/class_1/C11_0020.jpg",
+      "sha256": "199d9636731ea1a87f9fa952bb65ec7c26d591562e96b01d90f2e24efb339ccb",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0001.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0001.jpg",
+      "sha256": "fe0851fc680f486ee7e0d53055e88ebbc60c2aaa6b40ca6752cc7b421f16a3e9",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0002.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0002.jpg",
+      "sha256": "184aa12af1780af1d4ae55a73d22e9f4baadd1387da00aaf9fa3f26e65eb3532",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0003.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0003.jpg",
+      "sha256": "7db0367fd4e976c3836487266382623ddd49cb9e4b5503ab97b0f8f641a72d43",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0004.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0004.jpg",
+      "sha256": "ff8eeee31a62980aef0db10cf7ae1b88f0063e65fd665065af4646d721165ff2",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0005.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0005.jpg",
+      "sha256": "82c8b596e279007e1bb44a3d8a2fab2a98a6674913ce9bfa51cda088f188bdba",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0006.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0006.jpg",
+      "sha256": "6df48a779982acb115b42a62df63a1369e73fad5d72522b964236708b6e7d818",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0007.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0007.jpg",
+      "sha256": "52df0fd2069281f50bd8dc5414f7fba610b9996a9f42b26cf164a25d7a65313f",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0008.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0008.jpg",
+      "sha256": "b7855658450295d3b73d046cb4c61801da84e4db6449e5bba7d68b0f5c1dc9ed",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0009.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0009.jpg",
+      "sha256": "ef39cfa3fd084ccc622b04cd500a1d0ac51936092b99c3d86109563b5acdc2f2",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0010.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0010.jpg",
+      "sha256": "f030c8bd333e7cf9e60ac7de66aebbb55221b1ee3b91c0c0577b689ea5b8e93b",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0011.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0011.jpg",
+      "sha256": "ecf5425c3d0698af8d22bb8c217f791aea9f51e24692f317434d019af68eeeb2",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0012.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0012.jpg",
+      "sha256": "dc28482169f950b74706111c625d243d040faccf286f4b4814ab1904b8160cc0",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0013.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0013.jpg",
+      "sha256": "ab84c01090417a12fdec32a835fc576a436562148e7b6c4912bce1af531c925b",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0014.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0014.jpg",
+      "sha256": "d0d93a5d47cba1e806adb2c4a1081eb7fcdcc42c82d33339194e483000077bb7",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0015.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0015.jpg",
+      "sha256": "828f12408df9d36419c01cbdc31f5e9c99a6f4f4a3cddb68aeda05aff46b3fd3",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0016.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0016.jpg",
+      "sha256": "213da920b36a19bb7f8b29fb96025cb0bb82412423234c50c52ec37c1657e4bc",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0017.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0017.jpg",
+      "sha256": "c0c5f26c5f8b7aabc4a70777d367591352fe7897f18abc93401a1c8dc84de816",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0018.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0018.jpg",
+      "sha256": "fe67c50e513a0327cff3e19e10dea1dbfa4e1b3d455a135fefbb2221130dd3eb",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0019.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0019.jpg",
+      "sha256": "e89089ad59a5b368bb71f0a83c59f63fdf5a81a58b75bf4d2e1a1b69d289b879",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0020.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_0/C20_0020.jpg",
+      "sha256": "1c7c5dea37cf7486349c73a50206781fcd9cae16cee3020dfaa5ef8dc3935bae",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0001.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0001.jpg",
+      "sha256": "1d5109e60a4cdfe36bff451a0960d9433f05b916e10560f2053d6300bbed5711",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0002.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0002.jpg",
+      "sha256": "75ee81368e560f52bffd8e9aff1bc95891e5036103473c20d57f9882cd7a8f60",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0003.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0003.jpg",
+      "sha256": "a7d512bfc67a3399f3fa2192d6e8d41f8e579acaff659688186f467d697057cd",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0004.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0004.jpg",
+      "sha256": "6890ea63c02a445dd04b9d955b11d42c6347ca1b1b24467bb480592c16f28965",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0005.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0005.jpg",
+      "sha256": "436a37dc5b1b1a941c48271b3249b91549b38619e1e309676b664dd3bc62b7c4",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0006.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0006.jpg",
+      "sha256": "70ee2f62fa38b82f3aa5537911bc7a8e23262e23424d397d130dc21c26834d4c",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0007.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0007.jpg",
+      "sha256": "ad456033b5a198d4a11341c41c7b60e48416332c331a243f7b3d95d35f6fe8ce",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0008.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0008.jpg",
+      "sha256": "f440ec57614b6b39c4e218f82c7b4c73a0d9c7d5b6bd37948e1fbeea241528d2",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0009.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0009.jpg",
+      "sha256": "5c5568285707760cc2c266504de43cacae9d099751773cb9e38286ed333bef62",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0010.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0010.jpg",
+      "sha256": "f9cc0ef6e50524fd79cf0c2237345876cb0d5e344d259e12f2eb6518ea4cb7d9",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0011.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0011.jpg",
+      "sha256": "c49516f44591373b2554fe1fbc35d06eba54a808a7246723253e643d2c91fede",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0012.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0012.jpg",
+      "sha256": "16a15eff618ad05781f4a5f07b916ea54af51d5c67319f8e075a9a8a755993d2",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0013.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0013.jpg",
+      "sha256": "3b0cbaae66c567e0479635c1edc840d0fe1d247f03ab94736c70425d364effbe",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0014.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0014.jpg",
+      "sha256": "70a71348569591737c60d9c5e2737cfcceba10817c5af57703dbf26062f33e50",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0015.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0015.jpg",
+      "sha256": "99bdbe65228d1b1b76ccc18c1e8643128afce8cdadc459b2ad0631a5b6685d24",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0016.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0016.jpg",
+      "sha256": "fd75a372618e222549bcb6b3269f2440204f19c1e8e3d1e6a8dda6b62d985f04",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0017.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0017.jpg",
+      "sha256": "d8ceaac9365119e6cde49f09b9c843a16c6e0f9f701bc9747a857e83d30533ec",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0018.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0018.jpg",
+      "sha256": "8f5c51510b0235d98ed749ac3b803ca63de6f4832357f7ac5f6e4f38dada693c",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0019.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0019.jpg",
+      "sha256": "713a9e0e9400e3857e0d222a2f100b9dab46a44b16bbee4b36051a9a758350ec",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0020.jpg",
+      "url": "https://raw.githubusercontent.com/computervision-xray-testing/pyxvis/30de3af0edee237ac3fb7838a14d9f156a7e2fa5/listings/images/castings/test/class_1/C21_0020.jpg",
+      "sha256": "7ca0e05fb2de56445b10f78daeb20dcd7a1ce58217ed38581b4274bd3865a840",
+      "shape": [
+        32,
+        32
+      ]
+    }
+  ],
+  "results": [
+    {
+      "path": "listings/images/castings/test/class_0/C20_0001.jpg",
+      "class_id": 0,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.8054914105728553,
+        0.9630189768623727
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0002.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        2.2829931370565175,
+        0.9317532785068698
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.171875
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0003.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.2067061243760966,
+        0.7499464857157837
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0146484375
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0004.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.7243222773056341,
+        0.6358528069753281
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0005.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.3781282143700206,
+        0.7290955289693808
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.046875
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0006.jpg",
+      "class_id": 0,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.786604399592487,
+        0.8558479754035713
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0007.jpg",
+      "class_id": 0,
+      "predicted_class_id": 0,
+      "template_distances": [
+        1.0087379987161416,
+        1.1433491127284823
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.0078125
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0008.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.8086691803785698,
+        0.7513561296547189
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0009.jpg",
+      "class_id": 0,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.8613421013210604,
+        1.1567194502525615
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0010.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.8358080629238568,
+        0.775845511053216
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0011.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        2.107008702914587,
+        0.9126703089167666
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.1103515625
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0012.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.9006206094745288,
+        0.8849781700858792
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0013.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        2.0896332643853834,
+        0.8884161598618074
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.1220703125
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0014.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.2641761622318857,
+        0.7332174939828329
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.02734375
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0015.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.8828668684187572,
+        0.7643460144622057
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0016.jpg",
+      "class_id": 0,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7190675347545032,
+        0.7439236317756566
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0017.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.2341073114798338,
+        0.682648287442021
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.02734375
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0018.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.4381441119097937,
+        0.7737665447840787
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0019.jpg",
+      "class_id": 0,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.7949298350767903,
+        0.7422063368019216
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_0/C20_0020.jpg",
+      "class_id": 0,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.6790170896934353,
+        0.7541913277350599
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0001.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.7927415808465923,
+        0.7830587990985275
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0002.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.522288172429821,
+        0.7644479534023222
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.099609375
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0003.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.8632175811881604,
+        0.8475924895453962
+      ],
+      "gradient_knn_class_id": 0,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0004.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7611476563091203,
+        0.875718227269663
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0005.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.8109697490894403,
+        0.6959739387147321
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0006.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7326890072994888,
+        0.7796087184873963
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0007.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7662413407289244,
+        0.8416643481046849
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0008.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.8165266331873979,
+        0.8388840151014912
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0009.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7109120206156105,
+        0.7542419956106227
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0010.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7307382429106934,
+        0.7654245326872806
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0011.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7141503723898975,
+        0.8056192214301274
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0012.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.6579937598107746,
+        0.7871415122740857
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0013.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.7564385970393822,
+        0.7440948082332166
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0014.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7045114757468687,
+        0.8179005514898754
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0015.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7103669932326084,
+        0.7194066247840029
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0016.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.1410025567415363,
+        0.7684032374413257
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.001953125
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0017.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        0.7973960128852702,
+        0.6721195029003102
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0018.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.466720994789559,
+        0.7088620037894123
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0849609375
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0019.jpg",
+      "class_id": 1,
+      "predicted_class_id": 0,
+      "template_distances": [
+        0.7445745649534605,
+        0.7548500101173603
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0
+    },
+    {
+      "path": "listings/images/castings/test/class_1/C21_0020.jpg",
+      "class_id": 1,
+      "predicted_class_id": 1,
+      "template_distances": [
+        1.3772449811755791,
+        0.7630835398961276
+      ],
+      "gradient_knn_class_id": 1,
+      "flagged_fraction_against_class0": 0.0361328125
+    }
+  ]
+}
