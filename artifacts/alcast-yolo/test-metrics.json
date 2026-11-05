@@ -1,0 +1,11 @@
+{
+  "metrics/precision(B)": 0.569786736033028,
+  "metrics/recall(B)": 0.33460390848852867,
+  "metrics/mAP50(B)": 0.3669140072555893,
+  "metrics/mAP50-95(B)": 0.1308699914951056,
+  "fitness": 0.1308699914951056,
+  "epochs": 3,
+  "imgsz": 512,
+  "device": "mps",
+  "checkpoint": "data/yolo/train/weights/best.pt"
+}

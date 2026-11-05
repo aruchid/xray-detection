@@ -4,3 +4,5 @@ __pycache__/
 
 # Raw research datasets and download archives
 data/
+
+.venv-yolo/

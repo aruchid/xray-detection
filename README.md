@@ -1,70 +1,83 @@
-# X 光异常区域基线
+# 工业 X 光缺陷检测
 
-## 真实数据实测（2026-11-04）
+使用 YOLO11n 在 Al-Cast 真实铝铸件 X 光图上训练，定位内部缺陷。当前完成数据检查、训练、验证、测试和预测图导出。
 
-已下载并实际运行作者 [PyXVis](https://github.com/computervision-xray-testing/pyxvis) 仓库的铸件 X 光 JPEG 小图。README 以这次真实数据测试为主；合成样例仅保留作回归检查。
+## 真实测试结果
 
-**同一批 40 张测试图上，梯度 3 近邻判对 25 张（62.5%），残差双模板判对 15 张（37.5%）。**
+2026-11-05 完成 20 轮训练，输入 640×640，批大小 8，Apple Silicon MPS。COCO 预训练初始化，将原始缺陷类型合并为一个 defect 类。最佳权重按验证集 mAP@0.50:0.95 选择。
 
-| 项目 | 实测设置 / 结果 |
-| --- | --- |
-| 来源版本 | `30de3af0edee237ac3fb7838a14d9f156a7e2fa5` |
-| 数据 | 作者 `listings/images/castings/` 下的真实铸件小图，32×32 灰度 |
-| 选样 | 源 train/test 各按类别、文件名字典序取前 20 张 |
-| 训练 / 测试 | 40 / 40 张；各含 20 张 class_0 与 20 张 class_1 |
-| 方法 | 每类训练图取逐像素中位数模板，调用残差 MAD 打分，分数截断至 20 后取均值，选距离较小的类别 |
-| 固定参数 | 异常阈值 5；未利用测试标签调参 |
-| 梯度 3 近邻 | 将灰度梯度幅值按 4×4 网格取均值并归一化，用距离最近的 3 张训练图投票 |
-| 梯度 3 近邻准确率 | 62.5%（25/40） |
-| 残差双模板准确率 | 37.5%（15/40）；平衡二分类随机猜测期望为 50% |
-| 缺陷定位精度 | 未评测：本次小图未取得像素真值和成对正常参考 |
+| 数据集合 | 图像 |
+| --- | ---: |
+| 训练 | 2,186 |
+| 验证 | 684 |
+| 测试 | 596 |
 
-![真实数据测试混淆矩阵](artifacts/real-data/summary.png)
+测试集共 985 个缺陷框。
 
-行是真实类别，列是预测类别。梯度法判对 7/20 张 class_0 和 18/20 张 class_1，类别表现仍不均衡。这里保留作者目录的 class_0/class_1 编号，其正常/缺陷含义尚未独立核实，因此不报告缺陷召回或正常误报率。样本量小、按名字选取，没有完成按原始零件或采集系列去重，不能作为完整数据集或现场泛化结论。
+| 测试指标 | 结果 |
+| --- | ---: |
+| mAP@0.50 | 68.28% |
+| mAP@0.50:0.95 | 30.12% |
+| 精确率 | 74.14% |
+| 召回率 | 60.61% |
 
-## 查看真实图像与输出
+精确率与召回率来自 Ultralytics 评估器的汇总工作点。预测展示采用固定置信度 0.25。小缺陷仍有漏检，严格 IoU 下的框定位精度还有较大改善空间。
 
-运行脚本后，本地 [真实输入与输出对照图](data/real-data-preview.png) 展示四张真实输入、相对于 class_0 模板的异常掩膜与分数。它们是未配准小图的探索性输出，不能视为已验证的缺陷位置。
+[原始指标](artifacts/alcast-yolo/test-metrics-20e-640.json) · [训练逐轮记录](artifacts/alcast-yolo/training.csv) · [划分检查](artifacts/alcast-yolo/split-audit.json)
 
-[GDXray 官方数据说明](https://github.com/computervision-xray-testing/GDXray)限制科研教育使用、禁止再分发及商业使用。本仓库保守地不上传原图和含原图的本地效果图；上方公开图仅展示汇总统计。每个实际下载文件的来源 URL、SHA256、尺寸和逐图结果见 [实测报告](artifacts/real-data/report.json)。
+## 真实图像效果
 
-## 复现真实数据测试
+下图固定采用测试集中编号最前的三张图。左列绿色框为发布数据标注，右列红色框为实际模型预测，数字为置信度。这三张包含明显漏检，100.jpg 还出现偏离标注的预测框。
 
-Python 3.11+，另需系统 `curl`。首次运行下载固定清单的 80 张小图到被 Git 忽略的 `data/pyxvis/`，不会下载完整 Castings 压缩包。
+![真实 X 光图标注与 YOLO 预测](artifacts/alcast-yolo/predictions.png)
 
-```sh
-python -m pip install -r requirements.txt
-python scripts/validate_real_data.py
-python -m unittest discover -s tests -v
+图像来自 Al-Cast，由本项目脚本叠加标注和模型输出。数据出处为 Parlak 与 Emel 的研究及作者公开下载包。[论文](https://doi.org/10.1016/j.engappai.2022.105636) · [下载入口](https://drive.google.com/drive/folders/1e5kPSc1RuapBtF5zMW5HhoTYVjttjdJ7)
+
+![20 轮训练曲线](artifacts/alcast-yolo/training.png)
+
+## 数据检查与评估限制
+
+发布包共 3,466 张图和 3,024 份标注文件，包含 5,809 个缺陷框。未提供框的图像按无标注异常处理。坐标检查未发现非法框。
+
+原来的划分发现 47 次完全相同 JPEG 跨集合重复。本次将每 50 个连续编号视为一个组，再将共享相同 JPEG SHA256 的组归并后划分，跨集合完全重复数为零。各组明细保存在固定的 split.json 中。真实零件身份和近重复关系仍待核实，因此该划分用于项目内部评估。
+
+早期 3 轮、512 像素试跑的 mAP@0.50 为 36.69%，原始划分存在上述重复问题。本次同时调整训练轮数、分辨率和划分，两个数值不能用于隔离某一项调整的收益。训练超参数与模型选择均使用训练、验证集合，测试集用于训练完成后的最终评估。
+
+[固定划分](artifacts/alcast-yolo/split.json) · [早期试跑指标](artifacts/alcast-yolo/test-metrics.json)
+
+## 复现
+
+使用 Python 3.12、Ultralytics 8.4.0。先从作者入口取得 AlCastXray.zip，存为 data/AlCast.zip。实测包 SHA256 为：
+
+```text
+80dafea2764d8a1467d3ae831af4d5278028a5f12c9d5ff870db08e5ff4bedf5
 ```
 
-输出：
-
-- `artifacts/real-data/report.json`：数据来源、校验值、方法参数与逐图测试结果。
-- `artifacts/real-data/summary.png`：真实小图类别混淆矩阵。
-- `data/real-data-preview.png`：本地真实输入与算法输出对照。
-
-下载清单固定在 `scripts/real_data_paths.json`，训练与测试沿用源目录划分。测试脚本不注入人工缺陷。
-
-## 当前算法与限制
-
-`src/prototype.py::process(image, reference)`输出残差 MAD 异常掩膜与分数。其原始输入契约要求同尺寸、已配准的灰度图与正常参考图。
-
-此次新增的双模板类别实验使用类别中位数模板，是为了检验这类残差分数在真实小图上的表现；这些模板不满足“同零件成对正常参考”的条件。因此该实验不构成原始成对检测算法的正式验收，当前也没有训练目标检测网络。下一步应建立正常/缺陷标签映射与零件级拆分，选用合适的真实数据分类/定位基线，并继续等待现场成对参考数据。
-
-## 数值有效性与阈值
-
-`process(image, reference, threshold=5.0)` 要求二维、非空、同形状且有限的输入。阈值必须为有限的正标量；NaN、无穷、零、负值或向量均抛出 `ValueError`。即使输入有限，极端数值也可能使残差或评分溢出，此时明确拒绝计算，避免无效分数被当成“没有异常”。需在调用前对图像和参考使用相同尺度进行合理缩放。
-
-评分为 `abs(residual - median(residual)) / max(1.4826 * MAD, 1e-8)`；仅 `score > threshold` 判为异常，等于阈值不标记。MAD 为零时使用固定尺度下限，结果依赖输入灰度尺度。整体恒定偏移会被残差中位数消除，因此本方法不能检测全图统一亮度偏移。
-
-## 合成回归检查
-
 ```sh
-python src/prototype.py --output artifacts
+uv venv --python 3.12 .venv-yolo
+uv pip install --python .venv-yolo/bin/python -r requirements-yolo.txt
+mkdir -p data/yolo
+curl -fL https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt -o data/yolo/yolo11n.pt
+PYTORCH_ENABLE_MPS_FALLBACK=1 .venv-yolo/bin/python scripts/train_alcast_yolo.py data/AlCast.zip --epochs 20 --imgsz 640 --batch 8
 ```
 
-原 `artifacts/result.png`、`metrics.json` 和 `results.npz` 仍来自固定种子合成样例。它们仅检查数值流程，没有替换为真实检测指标。
+训练结束自动评估测试集并输出 test-metrics-20e-640.json。权重与完整运行结果保存在 data/yolo 下，每次运行可能自动追加目录编号。此次最佳权重为 data/yolo/train_dedup_20e_6402/weights/best.pt，保留在本地。
 
-[真实数据说明](docs/REAL_DATA.md) · [验证记录](docs/VALIDATION.md) · [实现范围](docs/IMPLEMENTATION.md) · [PRD](docs/PRD.md)
+```sh
+.venv-yolo/bin/python scripts/export_yolo_results.py data/yolo/train_dedup_20e_6402/weights/best.pt
+python3 -m unittest discover -s tests -v
+```
+
+无 MPS 的环境可传入 --device cpu。随机种子固定为 42，MPS 部分运算仍有非确定性提示，重跑指标可能有差异。
+
+## 早期算法记录
+
+残差 MAD 算法仍保留在 src/prototype.py，原输入要求已配准的正常参考图。合成演示可通过下列命令执行。
+
+```sh
+python3 src/prototype.py --output artifacts
+```
+
+早期 PyXVis 小图分类和 Al-Cast 线性评分器记录保留在 artifacts 中，当前主流程为 YOLO 框检测。
+
+[原型范围](docs/IMPLEMENTATION.md) · [验证记录](docs/VALIDATION.md) · [真实数据来源](docs/REAL_DATA.md)

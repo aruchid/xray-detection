@@ -1,0 +1,10 @@
+{
+  "images_per_split": {
+    "test": 596,
+    "train": 2186,
+    "validation": 684
+  },
+  "cross_split_exact_duplicates": 0,
+  "box_count": 5809,
+  "invalid_boxes": 0
+}

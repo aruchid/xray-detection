@@ -27,3 +27,7 @@
 ## 真实小图实验
 
 `scripts/validate_real_data.py` 下载固定提交的 80 张作者铸件小图，使用两类训练中位数模板分别调用 `process`，以截断残差分数均值做类别选择。它是新增的探索性类别基线，未满足原成对正常参考输入契约；没有像素定位验收。结果和限制以 README 与实测报告为准。
+
+## YOLO 主流程
+
+使用 scripts/train_alcast_yolo.py 转换原始 Al-Cast 框、训练 YOLO11n 并评估最佳权重。固定划分位于 artifacts/alcast-yolo/split.json，采用精确重复图归并后的编号组划分。最新行为和指标以README及JSON报告为准。

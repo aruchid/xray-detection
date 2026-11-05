@@ -1,0 +1,21 @@
+{
+  "metrics/precision(B)": 0.7414288001528039,
+  "metrics/recall(B)": 0.6060913705583756,
+  "metrics/mAP50(B)": 0.6827652503720355,
+  "metrics/mAP50-95(B)": 0.30119074261152196,
+  "fitness": 0.30119074261152196,
+  "epochs": 20,
+  "imgsz": 640,
+  "device": "mps",
+  "checkpoint": "data/yolo/train_dedup_20e_6402/weights/best.pt",
+  "test_images": 596,
+  "test_boxes": 985,
+  "train_images": 2186,
+  "validation_images": 684,
+  "seed": 42,
+  "ultralytics": "8.4.0",
+  "torch": "2.15.0",
+  "selection": "best validation mAP50-95",
+  "dataset_sha256": "80dafea2764d8a1467d3ae831af4d5278028a5f12c9d5ff870db08e5ff4bedf5",
+  "checkpoint_sha256": "9313e4e4f2576790cd85c11a0d7bd175eee410c9e7776eb6bc4d1ff894cd1d0e"
+}
