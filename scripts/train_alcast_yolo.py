@@ -1,13 +1,16 @@
 """Train YOLO on the fixed Al-Cast split and evaluate the best checkpoint."""
 import argparse
 import json
+import shutil
+import tempfile
+from contextlib import contextmanager
 from pathlib import Path, PurePosixPath
 from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def prepare(archive_path, dataset):
+def _write_dataset(archive_path, dataset, final_path):
     split_file = ROOT / 'artifacts/alcast-yolo/split.json'
     groups = json.loads(split_file.read_text())['split_id_blocks']
     split_by_block = {block: split for split, blocks in groups.items() for block in blocks}
@@ -30,10 +33,46 @@ def prepare(archive_path, dataset):
             label.write_text(''.join('0 ' + ' '.join(row.split()[1:]) + '\n'
                                      for row in rows if row.strip()))
     config = dataset / 'alcast.yaml'
-    config.write_text(json.dumps({'path': str(dataset), 'train': 'images/train',
+    config.write_text(json.dumps({'path': str(final_path), 'train': 'images/train',
                                   'val': 'images/validation', 'test': 'images/test',
                                   'names': ['defect']}, indent=2))
     return config
+
+
+@contextmanager
+def preparation_lock(dataset):
+    lock = dataset.with_name(dataset.name + '.lock')
+    try:
+        lock.mkdir()
+    except FileExistsError as error:
+        raise RuntimeError(f'Dataset preparation already locked: {lock}') from error
+    try:
+        yield
+    finally:
+        lock.rmdir()
+
+
+def prepare(archive_path, dataset):
+    """Publish a complete replacement, preserving the prior dataset on failure."""
+    dataset = dataset.resolve()
+    dataset.parent.mkdir(parents=True, exist_ok=True)
+    with preparation_lock(dataset):
+        staging = Path(tempfile.mkdtemp(prefix=dataset.name + '-staging-', dir=dataset.parent))
+        backup = staging / 'previous'
+        try:
+            built = staging / 'dataset'
+            _write_dataset(archive_path, built, dataset)
+            if dataset.exists():
+                dataset.rename(backup)
+            try:
+                built.rename(dataset)
+            except BaseException:
+                if backup.exists():
+                    backup.rename(dataset)
+                raise
+        finally:
+            shutil.rmtree(staging)
+    return dataset / 'alcast.yaml'
 
 
 def main():
